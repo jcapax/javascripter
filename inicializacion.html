@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function iniciar(){
+            document.getElementById('parrafo-2').style.color = 'white'
+        }
+
+        function cambiarEstilo(){
+            document.getElementById('caja-1').style.color = 'red'
+        }
+
+        function getAnno(){
+            var _fecha = new Date()
+            var _anno = _fecha.getFullYear()
+
+            document.getElementById('caja-1').value = _anno
+
+            document.getElementById('caja-1').addEventListener('click', cambiarEstilo())
+        }
+
+        window.addEventListener('load', iniciar) //'load' - manejador de evento, se dispara cuando la pagina ha terminado de inicializar
+        //window.addEventListener('load', getAnno)
+
+        document.addEventListener('DOMContentLoaded', function(){ // DOMContentLoaded se dispara cuando el los elementos del body se han inicializado
+            var _fecha = new Date()
+            var _anno = _fecha.getFullYear()
+
+            document.getElementById('caja-1').value = _anno
+
+            document.getElementById('caja-1').addEventListener('click', function(){
+                document.getElementById('caja-1').style.color = 'red'
+                document.getElementById('caja-1').style.fontSize = 'xx-large'
+            })
+        })
+        
+    </script>
+</head>
+<body>
+    
+
+    <h1>titulo de la pagina</h1>
+    <p id="parrafo-1">mi vieja mula ya no es lo q era, ya no es lo que era</p>
+    <p id="parrafo-2">mi vieja mula ya no es lo q era, ya no es lo que era</p>
+    <p id="parrafo-3">mi vieja mula ya no es lo q era, ya no es lo que era</p>
+
+    <input type="text" id="caja-1"/>
+    
+</body>
+</html>
